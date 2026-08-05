@@ -117,8 +117,8 @@ Check the `past_abilities` array and `past_types` array.
 ### Use ID or Name — Both Work
 
 ```
-GET /pokemon/1 ← By ID (faster)
-GET /pokemon/pikachu ← By name (more readable)
+GET /pokemon/1 #By ID (faster)
+GET /pokemon/pikachu #By name (more readable)
 ```
 
 Both return the same data. Use whichever is convenient.
