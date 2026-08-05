@@ -1,0 +1,70 @@
+{
+  "info": {
+    "_postman_id": "3e6c0a79-7cfb-42f4-a805-f15c236ca431",
+    "name": "PokeAPI Documentation",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "57154650",
+    "_collection_link": "https://go.postman.co/collection/57154650-3e6c0a79-7cfb-42f4-a805-f15c236ca431?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get List of All Pokemon",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retrieves a list of all available Pokémon with basic information and URLs for detailed data"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Specific Pokemon",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retrieves detailed information about a specific Pokémon, including stats, abilities, moves, and more"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Pokemon Type",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retrieves all Pokémon of a specific type (e.g., fire, water, grass) and moves associated with that type"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Move Information",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "description": "Retrieves information about a move/attack, including damage, accuracy, type, and descriptions in multiple languages"
+      },
+      "response": []
+    },
+    {
+      "name": "Get Item Information",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "https://pokeapi.co/api/v2/item/1",
+          "protocol": "https",
+          "host": [
+            "pokeapi",
+            "co"
+          ],
+          "path": [
+            "api",
+            "v2",
+            "item",
+            "1"
+          ]
+        },
+        "description": "Retrieves item data including effects, descriptions in multiple languages, and which Pokémon can hold them"
+      },
+      "response": []
+    }
+  ]
+}
