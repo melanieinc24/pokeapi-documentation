@@ -2,24 +2,45 @@
 
 ## Overview
 
-**Main useful fields:**
-
-- damage_relations — What types are strong/weak against this type
-- pokemon — All Pokémon of this type
-- moves — All moves of this type
+The type endpoint provides information about a specific Pokémon type, 
+including type matchups (what it's strong and weak against), all Pokémon 
+with that type, and moves that use that type.
 
 ## Get a Specific Type
 
-
 ### Request
+```
+GET /type/{name}
+```
 
-GET https://pokeapi.co/api/v2/type/
+**Base URL:** `https://pokeapi.co/api/v2/`
+
+**Examples:** 
+
+- `https://pokeapi.co/api/v2/type/fire`
+- `https://pokeapi.co/api/v2/type/water`
+- `https://pokeapi.co/api/v2/type/grass`
 
 
 ### Response Fields
 
+| Field | Type | Description |
+|-------|------|-------------|
+| `id` | Integer | Unique identifier for this type |
+| `name` | String | The name of the type (e.g., "fire", "water") |
+| `damage_relations` | Object | Shows what types are strong/weak against this type |
+| `pokemon` | Array | List of all Pokémon with this type |
+| `moves` | Array | List of all moves that use this type |
 
 ### Example Response
+
+**Request:**
+
+GET https://pokeapi.co/api/v2/type/fire
+
+**Response:**
+
+
 
 
 ## Common Use Cases
