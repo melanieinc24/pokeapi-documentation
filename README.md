@@ -1,29 +1,44 @@
 # PokéAPI Documentation
 
-Professional API documentation for the [PokéAPI](https://pokeapi.co/).
+This repository contains an ongoing personal API documentation project using [PokéAPI](https://pokeapi.co/), a public REST API for Pokémon data.
 
-This project demonstrates:
-- API testing and exploration with Postman
-- Professional REST API documentation
-- Technical writing for developers
-- Real-world API integration examples
+The project focuses on developing clear, structured, developer-friendly documentation, including getting-started instructions, endpoint references, and practical use cases.
 
-## Quick Start
+**Project status:** Work in progress. Completed and partially developed documentation samples are identified below.
 
-Get a Pokémon:
+## Getting Started
+
+Retrieve information about Bulbasaur using curl:
+
 ```bash
 curl https://pokeapi.co/api/v2/pokemon/1
 ```
 
-## Contents
+PokéAPI does not require an API key or authentication.
 
-- [Getting Started](docs/getting-started.md) - Quick start guide
-- [Pokémon Endpoint](docs/pokemon-endpoint.md) - Detailed endpoint documentation
-- [Type Endpoint](docs/type-endpoint.md) - Type filtering and data
-- [Move Endpoint](docs/move-endpoint.md) - Moves/attacks documentation
-- [Item Endpoint](docs/item-endpoint.md) - Items documentation
-- [Error Handling](docs/error-handling.md) - Common errors explained
-- [Code Examples](examples/code-examples.md) - Python, JavaScript examples
-- [Postman Collection](postman/PokéAPI_Collection.json) - Import for interactive testing
+**Base URL:** `https://pokeapi.co/api/v2/`
 
-## API Base URL
+## Documentation
+
+### Available Samples
+
+- [Getting Started Guide](docs/getting-started.md) — Introduction to PokéAPI and making your first request.
+- [Pokémon Endpoint Reference](docs/pokemon-endpoint.md) — Endpoint usage, response fields, examples, and common use cases.
+
+### In Progress
+
+- [Type Endpoint Reference](docs/type-endpoint.md) — Type information and battle matchups; example response and additional guidance are still being developed.
+- Additional endpoint references, error-handling guidance, and code examples are planned.
+
+## Skills Demonstrated
+
+- REST API documentation
+- Markdown authoring
+- API endpoint and response-field documentation
+- Developer-focused getting-started instructions
+- Task-based documentation and use cases
+- Git-based documentation workflows
+
+## Project Context
+
+This is an independent learning and portfolio project, not official PokéAPI documentation. It complements my professional experience developing enterprise software documentation and organizing technical content for different audiences.
