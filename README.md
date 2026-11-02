@@ -30,6 +30,12 @@ PokéAPI does not require an API key or authentication.
 - [Type Endpoint Reference](docs/type-endpoint.md) — Type information and battle matchups; example response and additional guidance are still being developed.
 - Additional endpoint references, error-handling guidance, and code examples are planned.
 
+## Postman Collection
+
+[Download the Postman Collection](postman/PokeAPI%20Documentation.postman_collection.json)
+
+The collection contains five tested GET requests covering Pokémon, types, moves, and items.
+
 ## Skills Demonstrated
 
 - REST API documentation
