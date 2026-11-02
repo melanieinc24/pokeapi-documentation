@@ -1,68 +1,114 @@
 # Getting Started with PokéAPI
 
-## What is PokéAPI?
+## Overview
 
-PokéAPI is a free, open-source RESTful API providing comprehensive Pokémon data including:
-- Pokémon species information
-- Moves/attacks
-- Items
-- Abilities
-- Types
-- Encounters
-- And much more!
+PokéAPI is a free, public REST API that provides Pokémon-related data, including species, abilities, moves, types, items, and encounters.
 
+This guide shows you how to make your first API request and retrieve information about a Pokémon.
 
-## Why Use PokéAPI?
+By the end of this guide, you'll know how to:
 
-- **Build Pokémon projects fast** — Don't spend time collecting data; focus on building
-- **No authentication hassle** — Start immediately, no API keys or signup
-- **Comprehensive data** — Every Pokémon, move, type, item, and more
-- **Perfect for learning** — Great first API to practice with
-- **Free to use** — No cost, no limits to worry about
+- Make a GET request to PokéAPI.
+- Retrieve a Pokémon by its numeric ID or name.
+- Identify key fields in the JSON response.
 
-## API Base URL
+## Prerequisites
 
-All requests start with:
+You need:
+
+- An internet connection.
+- A web browser or a terminal with curl installed.
+
+PokéAPI does not require an account, API key, or authentication.
+
+## Base URL
+
+All API requests use the following base URL:
+
+```text
 https://pokeapi.co/api/v2/
+```
 
-## What You Need to Know
-- Do you need an API key? (In PokéAPI's case: NO) 
-- Do you need to sign up? (PokéAPI: NO) 
-- Any rate limits to know about? (PokéAPI: Be respectful)
+Append a resource path to the base URL to request specific data.
 
-## No Setup Required
+For example, `/pokemon/1` retrieves information about Bulbasaur.
 
-Unlike many APIs, **PokéAPI requires no authentication or API keys**. You can start using it immediately.
+## Step 1: Make Your First API Request
 
-Most APIs require:
-- Signing up for an account
-- Getting an API key
-- Configuring authentication
-
-PokéAPI skips all that. Just make a request. It works immediately.
-
-## Your First Request
-
-Get Pokémon #1 (Bulbasaur):
+Open a terminal and run the following command:
 
 ```bash
 curl https://pokeapi.co/api/v2/pokemon/1
 ```
-Or paste this in your browser:
-```
+
+This command sends an HTTP GET request to the Pokémon endpoint.
+
+Alternatively, paste the following URL into your browser:
+
+```text
 https://pokeapi.co/api/v2/pokemon/1
 ```
-## Response
 
-You'll get back JSON data about Bulbasaur including:
-- Its ID, name, height, weight
-- What type it is (Grass/Poison)
-- What abilities it has
-- All its stats
+Both methods retrieve the Pokémon resource with the ID `1`.
+
+## Step 2: Review the Response
+
+If the request succeeds, PokéAPI returns an HTTP `200 OK` status and a JSON response containing information about Bulbasaur.
+
+The following example shows selected fields from the response. Other fields have been omitted for readability.
+
+```json
+{
+  "id": 1,
+  "name": "bulbasaur",
+  "height": 7,
+  "weight": 69,
+  "base_experience": 64
+}
+```
+
+### Understanding the Response
+
+| Field | Description |
+|---|---|
+| `id` | Unique numeric identifier for the Pokémon. |
+| `name` | Name of the Pokémon. |
+| `height` | Height in decimeters. |
+| `weight` | Weight in hectograms. |
+| `base_experience` | Base experience yield associated with defeating the Pokémon. |
+
+The complete response includes additional information, such as types, abilities, stats, and moves.
+
+## Step 3: Retrieve a Different Pokémon
+
+You can retrieve Pokémon by numeric ID or name.
+
+For example, to retrieve Pikachu by ID:
+
+```bash
+curl https://pokeapi.co/api/v2/pokemon/25
+```
+
+To retrieve Pikachu by name:
+
+```bash
+curl https://pokeapi.co/api/v2/pokemon/pikachu
+```
+
+Both requests return the Pokémon resource for Pikachu.
 
 ## Next Steps
 
-- Try getting a different Pokémon: /pokemon/25 (Pikachu)
-- Try getting by name: /pokemon/pikachu
-- Read Pokémon Endpoint for detailed field explanations
-- Try Type Endpoint to filter by type
+Now that you've made your first API request, you can explore additional resources.
+
+- [Pokémon Endpoint Reference](pokemon-endpoint.md) — Learn about available response fields and common use cases.
+- [Type Endpoint Reference](type-endpoint.md) — Explore Pokémon types and their relationships. *Work in progress.*
+
+You can also explore the [official PokéAPI documentation](https://pokeapi.co/docs/v2) for additional endpoints and resources.
+
+## Best Practices
+
+- **Use descriptive resource paths.** Request Pokémon by name when it makes your application logic easier to understand.
+- **Handle unsuccessful requests.** Check HTTP status codes and account for missing resources.
+- **Cache responses when appropriate.** Avoid repeatedly requesting data that rarely changes.
+- **Use related resource URLs.** Follow URLs returned in API responses to retrieve additional information.
