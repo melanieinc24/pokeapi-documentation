@@ -1,51 +1,44 @@
 # Type Endpoint
 
+**Status: Work in Progress**
+
 ## Overview
 
-The type endpoint provides information about a specific Pokémon type, 
-including type matchups (what it's strong and weak against), all Pokémon 
-with that type, and moves that use that type.
+The Type endpoint provides information about a specific Pokémon type, including damage relationships, Pokémon associated with that type, and moves that use it.
 
 ## Get a Specific Type
 
-### Request
-```
-GET /type/{name}
-```
+**HTTP method:** `GET`
+
+**Endpoint:** `/type/{id or name}`
 
 **Base URL:** `https://pokeapi.co/api/v2/`
 
-**Examples:** 
+### Example Requests
 
-- `https://pokeapi.co/api/v2/type/fire`
-- `https://pokeapi.co/api/v2/type/water`
-- `https://pokeapi.co/api/v2/type/grass`
+```http
+GET https://pokeapi.co/api/v2/type/fire
+GET https://pokeapi.co/api/v2/type/water
+GET https://pokeapi.co/api/v2/type/grass
+```
 
-
-### Response Fields
+### Selected Response Fields
 
 | Field | Type | Description |
-|-------|------|-------------|
-| `id` | Integer | Unique identifier for this type |
-| `name` | String | The name of the type (e.g., "fire", "water") |
-| `damage_relations` | Object | Shows what types are strong/weak against this type |
-| `pokemon` | Array | List of all Pokémon with this type |
-| `moves` | Array | List of all moves that use this type |
+|---|---|---|
+| `id` | Integer | Unique identifier for the type. |
+| `name` | String | Name of the type, such as `fire` or `water`. |
+| `damage_relations` | Object | Damage multipliers associated with attacking and defending against other types. |
+| `pokemon` | Array | Pokémon associated with this type. |
+| `moves` | Array | Moves associated with this type. |
 
-### Example Response
+## Planned Documentation
 
-**Request:**
+The following sections are still being developed:
 
-GET https://pokeapi.co/api/v2/type/fire
+- Example JSON response
+- Interpreting damage relationships
+- Finding Pokémon associated with a type
+- Practical use cases and examples
 
-**Response:**
-
-
-
-
-## Common Use Cases
-
-"I'm building a battle game and need to know if Fire beats Grass"
-"I'm building a Pokédex and want to show all Fire-type Pokémon"
-
-## Tips
+For the complete API schema, see the [official PokéAPI documentation](https://pokeapi.co/docs/v2#types).
